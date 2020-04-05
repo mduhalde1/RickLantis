@@ -1,15 +1,15 @@
 ﻿# Tarea 1 Taller de Integracion
 ## Datos
-Nombre: Magdalena Duhalde
-Mail: mduhalde1@uc.cl
-Numero de Alumno: 14619903
+- Nombre: Magdalena Duhalde
+- Mail: mduhalde1@uc.cl
+- Numero de Alumno: 14619903
 
 ## Aplicacion Web: 
 Se utilizo:
-Heroku
-Sails JS 
-Libreria Axios para los requests a la API
-**URL:** https://ricklantis.herokuapp.com/
+- Heroku
+- Sails JS 
+- Libreria Axios para los requests a la API
+- **URL:** https://ricklantis.herokuapp.com/
 
 ## Secciones 
 
