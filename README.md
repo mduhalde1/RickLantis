@@ -1,26 +1,23 @@
-# rick-and-morty
+﻿# Tarea 1 Taller de Integracion
+## Datos
+Nombre: Magdalena Duhalde
+Mail: mduhalde1@uc.cl
+Numero de Alumno: 14619903
 
-a [Sails v1](https://sailsjs.com) application
+## Aplicacion Web: 
+Se utilizo:
+Heroku
+Sails JS 
+Libreria Axios para los requests a la API
+**URL:** https://ricklantis.herokuapp.com/
 
+## Secciones 
 
-### Links
+En cada sección muestra toda la información relacionada a ella. 
+1. Homepage
+2. Episodios
+3. Personajes: Si no tiene país de origen o locación, no la muestra. 
+4. Lugares
+5. Busqueda: Muestra todos los capítulos, episodios y personajes que contengan la palabra buscada. Si se apretar buscar sin ingresar texto devuelve **todos** los capítulos, lugares y personajes. Cabe destacar que mientras menos especifica es la búsqueda, mayor es el tiempo de demora de la respuesta. (Ej: si no se ingresa texto, el tiempo de la búsqueda es alto).
 
-+ [Sails framework documentation](https://sailsjs.com/get-started)
-+ [Version notes / upgrading](https://sailsjs.com/documentation/upgrading)
-+ [Deployment tips](https://sailsjs.com/documentation/concepts/deployment)
-+ [Community support options](https://sailsjs.com/support)
-+ [Professional / enterprise options](https://sailsjs.com/enterprise)
-
-
-### Version info
-
-This app was originally generated on Fri Apr 03 2020 23:18:17 GMT-0300 (Chile Summer Time) using Sails v1.2.4.
-
-<!-- Internally, Sails used [`sails-generate@1.16.13`](https://github.com/balderdashy/sails-generate/tree/v1.16.13/lib/core-generators/new). -->
-
-
-
-<!--
-Note:  Generators are usually run using the globally-installed `sails` CLI (command-line interface).  This CLI version is _environment-specific_ rather than app-specific, thus over time, as a project's dependencies are upgraded or the project is worked on by different developers on different computers using different versions of Node.js, the Sails dependency in its package.json file may differ from the globally-installed Sails CLI release it was originally generated with.  (Be sure to always check out the relevant [upgrading guides](https://sailsjs.com/upgrading) before upgrading the version of Sails used by your app.  If you're stuck, [get help here](https://sailsjs.com/support).)
--->
 
