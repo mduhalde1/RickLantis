@@ -1,5 +1,5 @@
 const axios = require('axios')
-const url = 'https://rickandmortyapi.com/api/';
+const url = 'https://integracion-rick-morty-api.herokuapp.com/api/';
 
 module.exports = {
 

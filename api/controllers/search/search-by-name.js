@@ -1,7 +1,7 @@
 
 const axios = require('axios')
 var _ = require('lodash');
-const url = 'https://rickandmortyapi.com/api/';
+const url = 'https://integracion-rick-morty-api.herokuapp.com/api/';
 
 module.exports = {
 
@@ -34,23 +34,22 @@ module.exports = {
 
      
     fn: async function ({name}) {
-      var result = {}
-        if (!name){
-          name = ''
-        }
-        result = {'search': name}
-        name = name.split(' ').join('%20');
 
+      var result = {'search': name}
+      name = encodeURIComponent(name)
         // for episode:
         const getEpisode = async (url_api) => {
             try {
                 return await axios.get(url_api);
             } catch (error) {
-                return {};
+                return false;
             }
-        }
-
+          }
+        
         var episodes = await getEpisode(url + 'episode/?name=' + name);
+
+        if (episodes){
+
         var results = episodes.data.results
         var new_url = episodes.data.info.next
         while (new_url != ''){
@@ -64,18 +63,19 @@ module.exports = {
             episode_id_name.push({'id': results[i].id, 'name': results[i].name})
           }
          result['episodes'] =  episode_id_name
-        } 
+        } }
 
         // for location:
         const getLocation = async (url_api) => {
             try {
                 return await axios.get(url_api);
             } catch (error) {
-                return {};
+                return false;
             }
         }
-        
         var locations = await getLocation(url + 'location/?name=' + name);
+        console.log(url + 'location/?name=' + name)
+        if (locations){
         results = locations.data.results
         var new_url = locations.data.info.next
         while (new_url != ''){
@@ -89,17 +89,17 @@ module.exports = {
                 location_id_name.push({'id': results[i].id, 'name': results[i].name})
               }
              result['locations'] =  location_id_name
-        } 
-        
+        }}
         // for character:
         const getCharacter = async (url_api) => {
             try {
                 return await axios.get(url_api);
             } catch (error) {
-                return {};
+                return false;
             }
         }
         var characters = await getCharacter(url + 'character/?name=' + name);
+        if (characters){
         results = characters.data.results
         var new_url = characters.data.info.next
         while (new_url != ''){
@@ -113,7 +113,7 @@ module.exports = {
             character_id_name.push({'id': results[i].id, 'name': results[i].name})
           } 
           result['characters'] = character_id_name
-        } 
+        }}
        if (!result) { throw 'notFound'; }
        // Display a personalized welcome view.
        return {
